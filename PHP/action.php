@@ -19,6 +19,7 @@
     }
     else{
         $json[$RollNumber] = $data;
+        if(!is_dir("./data")) mkdir("./data", 0650);
         file_put_contents("./data/vouchers.json", json_encode($json));
         header("Location: /list.php");
     }
